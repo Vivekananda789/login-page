@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+</head>
+<body>
+  <form id="login-form" method="post" action="verify-otp.php">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <br><br>
+    <input type="submit" value="Request OTP">
+  </form>
+  
+  <form id="otp-form" method="post" action="verify-otp.php" style="display: none;">
+    <label for="otp">OTP:</label>
+    <input type="text" id="otp" name="otp" required>
+    <br><br>
+    <input type="submit" value="Verify OTP">
+  </form>
+  
+  <script>
+    // Function to show the OTP form after a successful login request
+    function showOtpForm() {
+      document.getElementById("login-form").style.display = "none";
+      document.getElementById("otp-form").style.display = "block";
+    }
+  </script>
+</body>
+</html>
